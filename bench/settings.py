@@ -19,7 +19,7 @@ site_configuration = {
                     'environs': ['builtin'],
                 },
                 {
-                    'name': 'load-only',
+                    'name': 'no-load-only',
                     'scheduler': 'local',
                     'launcher': 'local',
                     'environs': ['builtin'],

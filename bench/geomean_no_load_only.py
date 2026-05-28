@@ -25,19 +25,20 @@ def parse_ratios_from_strict_blocks(filename):
         else:
             print(f"⚠️ Unrecognized format at benchmark '{name}'")
             sys.exit(1)
-        default_ratio = 0    
-        no_load_only_ratio = 0
-        default_ratio = 0
+        default_metric = 0    
+        no_load_only_metric = 0
+        default_metric = 0
         try:
-            no_load_only_ratio = float(no_load_only_line.split()[1])
-            default_ratio = float(default_line.split()[1])
-            if default_ratio != 0:
-                ratios.append(default_ratio)
+            no_load_only_metric = float(no_load_only_line.split()[1])
+            default_metric = float(default_line.split()[1])
+            if default_metric != 0:
+                ratio = default_metric / no_load_only_metric
+                ratios.append(ratio)
             else:
-                print(f"⚠️ Zero default ratio for benchmark '{name}'")
+                print(f"⚠️ Zero default metric for benchmark '{name}'")
         except Exception as e:
             print(f"⚠️ Error parsing ratios for '{name}': {e}")
-        print(f"Parsed benchmark '{name}': no_load_only={no_load_only_ratio}, default={default_ratio}, ratio={default_ratio / no_load_only_ratio if no_load_only_ratio != 0 else 'undefined'}")
+        print(f"Parsed benchmark '{name}': no_load_only={no_load_only_metric}, default={default_metric}, ratio={ratio if 'ratio' in locals() else 'undefined'}")
     return ratios
 
 def geometric_mean(values):

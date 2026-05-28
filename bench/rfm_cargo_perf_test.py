@@ -6,9 +6,13 @@ LICM_DEFAULT_ARGS="-C opt-level=3"
 LICM_OWNSEM_ARGS = (
     "-C opt-level=3 "
     "-Cllvm-args=-licm-uses-ownsem "
-    "-Cllvm-args=-licm-ownsem-safeset-ignores-throw "
+    "-Cllvm-args=-licm-ownsem-safeset-ignores-throw=false "
     "-Cllvm-args=-licm-ownsem-safeset-store-threadsafe "
     "-Cllvm-args=-licm-ownsem-only-after-vectorization=false "
+    "-Cllvm-args=-licm-ownsem-only-after-vectorization=false "
+    "-Cllvm-args=-sroa-preserve-ownsem=true "
+    "-Cllvm-args=-instcombine-preserve-ownsem=true "
+    "-Cllvm-args=-loop-rotate-preserves-ownsem=true "
 )
 
 LICM_NO_LOAD_ONLY_ARGS = (
@@ -36,7 +40,7 @@ class CargoPerfOwnsemTest(rfm.RunOnlyRegressionTest):
 
     @run_before('run')
     def set_workdir(self):
-        env_vars = 'RUSTFLAGS_DEFUALT_LICM="{default_licm}" RUSTFLAGS_OWNSEM_LICM="{ownsem_licm}"'.format(
+        env_vars = 'RUSTFLAGS_DEFAULT_LICM="{default_licm}" RUSTFLAGS_OWNSEM_LICM="{ownsem_licm}"'.format(
             default_licm=LICM_DEFAULT_ARGS,
             ownsem_licm=LICM_OWNSEM_ARGS
         )
@@ -68,7 +72,7 @@ class CargoPerfNoLoadOnlyTest(rfm.RunOnlyRegressionTest):
 
     @run_before('run')
     def set_workdir(self):
-        env_vars = 'RUSTFLAGS_DEFUALT_LICM="{default_licm}" RUSTFLAGS_NO_LOAD_ONLY_LICM="{no_load_only_licm}"'.format(
+        env_vars = 'RUSTFLAGS_DEFAULT_LICM="{default_licm}" RUSTFLAGS_NO_LOAD_ONLY_LICM="{no_load_only_licm}"'.format(
             default_licm=LICM_DEFAULT_ARGS,
             no_load_only_licm=LICM_NO_LOAD_ONLY_ARGS
         )

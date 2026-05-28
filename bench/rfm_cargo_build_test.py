@@ -6,9 +6,12 @@ from pathlib import Path
 
 LICM_OWNSEM_ARGS = (
     "-Cllvm-args=-licm-uses-ownsem "
-    "-Cllvm-args=-licm-ownsem-safeset-ignores-throw "
+    "-Cllvm-args=-licm-ownsem-safeset-ignores-throw=false "
     "-Cllvm-args=-licm-ownsem-safeset-store-threadsafe "
-    "-Cllvm-args=-licm-ownsem-only-after-vectorization=false"
+    "-Cllvm-args=-licm-ownsem-only-after-vectorization=false "
+    "-Cllvm-args=-sroa-preserve-ownsem=true "
+    "-Cllvm-args=-instcombine-preserve-ownsem=true "
+    "-Cllvm-args=-loop-rotate-preserves-ownsem=true "
 )
 
 LICM_NO_LOAD_ONLY_ARGS = (
@@ -97,9 +100,9 @@ class CargoBuildSeaurchinDefaultTest(CargoBuildSeaurchinBase):
         return sn.assert_eq(self.job.exitcode, 0)
 
 @rfm.simple_test
-class CargoBuildSeaurchinLoadOnlyTest(CargoBuildSeaurchinBase):
+class CargoBuildSeaurchinNoLoadOnlyTest(CargoBuildSeaurchinBase):
     project = parameter(artifact_projects())
-    valid_systems = ['local:load-only']
+    valid_systems = ['local:no-load-only']
     valid_prog_environs = ['builtin']
 
     @run_before('run')
@@ -161,15 +164,15 @@ class CargoTestSeaurchinDefaultTest(rfm.RunOnlyRegressionTest):
       return sn.assert_eq(self.job.exitcode, 0)
 
 @rfm.simple_test
-class CargoTestSeaurchinLoadOnlyTest(rfm.RunOnlyRegressionTest):
+class CargoTestSeaurchinNoLoadOnlyTest(rfm.RunOnlyRegressionTest):
     project = parameter(artifact_projects())
-    valid_systems = ['local:load-only']
+    valid_systems = ['local:no-load-only']
     valid_prog_environs = ['builtin']
 
     @run_after('init')
     def set_dependency(self):
       # Create dependency on BuildTest with the same project
-      self.depends_on('CargoBuildSeaurchinLoadOnlyTest', 
+      self.depends_on('CargoBuildSeaurchinNoLoadOnlyTest', 
                       how=lambda child, parent: child[0] == parent[0])
 
     @run_before('run')

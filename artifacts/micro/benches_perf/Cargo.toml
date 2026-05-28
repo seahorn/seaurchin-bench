@@ -1,0 +1,18 @@
+[package]
+name = "benches"
+edition = "2021"
+description = "Benchmarks that test Bevy's performance"
+publish = false
+license = "MIT OR Apache-2.0"
+
+[[bench]]
+name = "benches_perf"
+path = "bench_accumulate_perf.rs"
+harness = false
+
+[dependencies]
+micro = { path = "../" }
+criterion = "=0.3.6"
+criterion-perf-events = "0.2.0"
+perfcnt = "0.8.0"
+x86 = "0.47.0"

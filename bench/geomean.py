@@ -2,7 +2,7 @@
 import sys
 import math
 
-def parse_ratios_from_strict_blocks(filename):
+def parse_ratios_from_strict_blocks(filename, mode):
     ratios = []
 
     with open(filename, 'r') as f:
@@ -15,28 +15,43 @@ def parse_ratios_from_strict_blocks(filename):
         line3 = lines[i + 3]
         i += 4  # Skip to next block
 
-        # Detect which is ownsem and which is default
-        if line2.startswith("ownsem_licm"):
-            ownsem_line = line2
-            default_line = line3
-        elif line2.startswith("default_licm"):
-            default_line = line2
-            ownsem_line = line3
-        else:
-            print(f"⚠️ Unrecognized format at benchmark '{name}'")
-            sys.exit(1)
-        ownsem_ratio = 0
-        default_ratio = 0    
-        try:
-            ownsem_ratio = float(ownsem_line.split()[1])
-            default_ratio = float(default_line.split()[1])
-            if default_ratio != 0:
-                ratios.append(ownsem_ratio / default_ratio)
+        # Determine which line is "new" and which is "old" based on mode
+        if mode == "ownsem":
+            if line2.startswith("ownsem_licm"):
+                new_line = line2
+                old_line = line3
+            elif line2.startswith("default_licm"):
+                old_line = line2
+                new_line = line3
             else:
-                print(f"⚠️ Zero default ratio for benchmark '{name}'")
+                print(f"⚠️ Unrecognized format at benchmark '{name}'")
+                sys.exit(1)
+        elif mode == "no_load_only":
+            if line2.startswith("default_licm"):
+                new_line = line2
+                old_line = line3
+            elif line2.startswith("no_load_only_licm"):
+                old_line = line2
+                new_line = line3
+            else:
+                print(f"⚠️ Unrecognized format at benchmark '{name}'")
+                sys.exit(1)
+        else:
+            print(f"Unknown mode: {mode}")
+            sys.exit(1)
+
+        new_metric = 0
+        old_metric = 0
+        try:
+            new_metric = float(new_line.split()[1])
+            old_metric = float(old_line.split()[1])
+            if old_metric != 0:
+                ratios.append(new_metric / old_metric)
+            else:
+                print(f"⚠️ Zero old metric for benchmark '{name}'")
         except Exception as e:
             print(f"⚠️ Error parsing ratios for '{name}': {e}")
-        print(f"Parsed benchmark '{name}': ownsem={ownsem_ratio}, default={default_ratio}, ratio={ownsem_ratio / default_ratio if default_ratio != 0 else 'undefined'}")
+        print(f"Parsed benchmark '{name}': new={new_metric}, old={old_metric}, ratio={new_metric / old_metric if old_metric != 0 else 'undefined'}")
     return ratios
 
 def geometric_mean(values):
@@ -44,12 +59,14 @@ def geometric_mean(values):
     return product ** (1 / len(values))
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python geomean_structured.py <filename>")
+    if len(sys.argv) != 3:
+        print("Usage: python geomean.py <filename> <mode>")
+        print("mode: ownsem or no_load_only")
         sys.exit(1)
 
     filename = sys.argv[1]
-    ratios = parse_ratios_from_strict_blocks(filename)
+    mode = sys.argv[2]
+    ratios = parse_ratios_from_strict_blocks(filename, mode)
 
     if not ratios:
         print("No valid ratios found.")
