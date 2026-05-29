@@ -71,6 +71,22 @@ class CargoBuildSeaurchinOwnsemTest(CargoBuildSeaurchinBase):
     valid_systems = ['local:ownsem']
     valid_prog_environs = ['builtin']
 
+    @run_after('init')
+    def set_reference(self):
+        # micro/ownsem load_store_promotions jitters in [1147, 1154] due to
+        # parallel-LLVM thread interleaving across codegen units; see
+        # https://github.com/seahorn/seaurchin-bench/issues/1 for the
+        # full investigation. A ±1% band covers the observed spread with
+        # margin. load_only_promotions is stable at 981 under default
+        # parallelism (would shift under codegen-units=1).
+        if self.project == 'micro':
+            self.reference = {
+                'local:ownsem': {
+                    'get_load_store_promotions': (1150, -0.01, 0.01, 'alias-sets'),
+                    'get_load_only_promotions':  ( 981, -0.01, 0.01, 'alias-sets'),
+                },
+            }
+
     @run_before('run')
     def set_workdir(self):
         rustflags = '-C opt-level=3 -Zprint_codegen_stats ' + LICM_OWNSEM_ARGS

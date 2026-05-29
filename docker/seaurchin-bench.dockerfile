@@ -1,25 +1,19 @@
-# start with a base image
-FROM git.uwaterloo.ca:5050/seaurchin/seaurchin-llvm
+# start with a base image (same bytes are mirrored at ghcr; using ghcr so
+# CI on github actions can pull without external registry credentials).
+FROM ghcr.io/seahorn/seaurchin-llvm/buildpack-deps-seaurchin:latest
 # set user to root to install requirements
 USER root
 WORKDIR /
-# install rust
+# install build/runtime utilities
 RUN apt-get update && \
-  apt-get install -y curl unzip jq zstd nano texlive-xetex pandoc  && \
-  PROJECT_PATH="seaurchin%2Fseaurchin" && \
-  PIPELINE_ID=$(curl --silent "https://git.uwaterloo.ca/api/v4/projects/$PROJECT_PATH/pipelines?ref=dev-18&status=success&per_page=1" | jq -r '.[0].id') && \
-  if [ -z "$PIPELINE_ID" ]; then echo "❌ No successful pipeline found" && exit 1; fi && \
-  JOB_ID=$(curl --silent "https://git.uwaterloo.ca/api/v4/projects/$PROJECT_PATH/pipelines/$PIPELINE_ID/jobs" | jq -r '.[] | select(.name == "build-rust-dist") | .id' | head -n 1) && \
-  if [ -z "$JOB_ID" ]; then echo "❌ No matching job found in pipeline $PIPELINE_ID" && exit 1; fi && \
-  echo "✅ Using job ID: $JOB_ID" && \
-  curl "https://git.uwaterloo.ca/api/v4/projects/$PROJECT_PATH/jobs/$JOB_ID/artifacts" --output artifacts.zip && \
-  unzip artifacts.zip && \
-  rm artifacts.zip
-# unzip seaurchin-dist.tar.zst in seaurchin directory
-RUN mkdir seaurchin && \
-  tar --zstd -xf seaurchin-dist.tar.zst -C seaurchin 
-# delete the tar file
-RUN rm seaurchin-dist.tar.zst
+  apt-get install -y curl zstd nano emacs texlive-xetex pandoc
+
+# install rust (seaurchin toolchain) from the dev-18-latest rolling release
+RUN curl -fsSL -o /seaurchin-dist.tar.zst \
+    https://github.com/seahorn/seaurchin/releases/download/dev-18-latest/seaurchin-dist.tar.zst && \
+  mkdir seaurchin && \
+  tar --zstd -xf /seaurchin-dist.tar.zst -C seaurchin && \
+  rm /seaurchin-dist.tar.zst
 # setup default user
 RUN useradd -ms /bin/bash usea && \
   echo usea:horn | chpasswd && \
@@ -47,9 +41,24 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
   rustup component add rustfmt clippy && \
   rustup toolchain link seaurchin /seaurchin/install/usr/local && \
   rustup default seaurchin
+ENV PATH="/home/usea/.cargo/bin:$PATH"
 
 # set the working directory
 RUN mkdir seaurchin-bench
 WORKDIR /home/usea/seaurchin-bench
 # copy the repo to the docker image
 COPY --chown=usea:usea . /home/usea/seaurchin-bench
+
+# run reframe build tests as a smoke test of the toolchain
+# RUN_ID lets callers force a fresh reframe execution (BuildKit caches identical RUNs otherwise).
+ARG RUN_ID=0
+RUN echo "reframe run id: $RUN_ID" && \
+  cd /tmp && \
+  ARTIFACTS=micro reframe \
+    -C /home/usea/seaurchin-bench/bench/settings.py \
+    -c /home/usea/seaurchin-bench/bench/rfm_cargo_build_test.py \
+    --exec-policy serial \
+    --performance-report \
+    -S sourcesdir=/home/usea/seaurchin-bench \
+    --system=local \
+    --run

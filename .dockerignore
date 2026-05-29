@@ -1,0 +1,13 @@
+# Build outputs — reframe rebuilds inside the container anyway
+**/target/
+**/__pycache__/
+
+# Local-only data
+valgrind/
+*.out
+.git/
+.gitmodules.bak
+.vscode/
+
+# Misc
+docker/seaurchin-dist.tar.zst
