@@ -1,0 +1,539 @@
+array_combinations_with_replacement1/fold
+-----------------------------------------
+default_licm     1.00       9.8±0.02µs       ? ?/sec
+ownsem_licm      1.00       9.8±0.02µs       ? ?/sec
+
+array_combinations_with_replacement2/fold
+-----------------------------------------
+default_licm     1.00      13.9±0.02µs       ? ?/sec
+ownsem_licm      1.01      14.0±0.02µs       ? ?/sec
+
+array_combinations_with_replacement3/fold
+-----------------------------------------
+default_licm     1.00      18.8±0.03µs       ? ?/sec
+ownsem_licm      1.04      19.6±0.04µs       ? ?/sec
+
+array_combinations_with_replacement4/fold
+-----------------------------------------
+default_licm     1.00      18.8±0.07µs       ? ?/sec
+ownsem_licm      1.00      18.9±0.05µs       ? ?/sec
+
+batching/fold
+-------------
+default_licm     1.00     459.7±2.40ns       ? ?/sec
+ownsem_licm      1.00     459.9±1.27ns       ? ?/sec
+
+cartesian_product/fold
+----------------------
+ownsem_licm      1.00       3.8±0.02µs       ? ?/sec
+default_licm     1.00       3.8±0.02µs       ? ?/sec
+
+circular_tuple_windows1/fold
+----------------------------
+ownsem_licm      1.00     594.6±1.46ns       ? ?/sec
+default_licm     1.02     604.8±3.28ns       ? ?/sec
+
+circular_tuple_windows2/fold
+----------------------------
+ownsem_licm      1.00     675.7±4.41ns       ? ?/sec
+default_licm     1.10     741.3±3.60ns       ? ?/sec
+
+circular_tuple_windows3/fold
+----------------------------
+ownsem_licm      1.00    1075.1±2.11ns       ? ?/sec
+default_licm     1.00    1078.8±3.27ns       ? ?/sec
+
+circular_tuple_windows4/fold
+----------------------------
+ownsem_licm      1.00    1331.5±3.35ns       ? ?/sec
+default_licm     1.00    1332.6±7.63ns       ? ?/sec
+
+coalesce/fold
+-------------
+ownsem_licm      1.00     728.6±6.75ns       ? ?/sec
+default_licm     1.01     734.6±3.64ns       ? ?/sec
+
+combinations1/fold
+------------------
+ownsem_licm      1.00      52.5±0.07µs       ? ?/sec
+default_licm     1.01      53.2±0.47µs       ? ?/sec
+
+combinations2/fold
+------------------
+ownsem_licm      1.00      52.4±0.16µs       ? ?/sec
+default_licm     1.01      52.7±0.08µs       ? ?/sec
+
+combinations3/fold
+------------------
+default_licm     1.00      57.8±0.07µs       ? ?/sec
+ownsem_licm      1.00      57.9±0.12µs       ? ?/sec
+
+combinations4/fold
+------------------
+ownsem_licm      1.00      60.9±0.13µs       ? ?/sec
+default_licm     1.00      61.0±0.19µs       ? ?/sec
+
+combinations_with_replacement1/fold
+-----------------------------------
+default_licm     1.00     121.8±0.16µs       ? ?/sec
+ownsem_licm      1.01     122.8±0.22µs       ? ?/sec
+
+combinations_with_replacement2/fold
+-----------------------------------
+ownsem_licm      1.00     123.8±0.29µs       ? ?/sec
+default_licm     1.01     125.2±0.20µs       ? ?/sec
+
+combinations_with_replacement3/fold
+-----------------------------------
+default_licm     1.00     128.4±0.26µs       ? ?/sec
+ownsem_licm      1.00     128.5±0.20µs       ? ?/sec
+
+combinations_with_replacement4/fold
+-----------------------------------
+ownsem_licm      1.00     127.6±0.26µs       ? ?/sec
+default_licm     1.01     128.3±0.21µs       ? ?/sec
+
+dedup/fold
+----------
+ownsem_licm      1.00     466.6±2.34ns       ? ?/sec
+default_licm     1.02     476.2±2.74ns       ? ?/sec
+
+dedup_by/fold
+-------------
+ownsem_licm      1.00     466.8±2.41ns       ? ?/sec
+default_licm     1.01     473.4±2.57ns       ? ?/sec
+
+dedup_by_with_count/fold
+------------------------
+default_licm     1.00     602.1±0.73ns       ? ?/sec
+ownsem_licm      1.50     901.8±2.51ns       ? ?/sec
+
+dedup_with_count/fold
+---------------------
+ownsem_licm      1.00     483.8±1.60ns       ? ?/sec
+default_licm     1.00     484.0±0.68ns       ? ?/sec
+
+duplicates/fold
+---------------
+default_licm     1.00      20.5±0.03µs       ? ?/sec
+ownsem_licm      1.01      20.7±0.12µs       ? ?/sec
+
+duplicates/rfold
+----------------
+ownsem_licm      1.00      20.5±0.05µs       ? ?/sec
+default_licm     1.02      21.0±0.03µs       ? ?/sec
+
+duplicates_by/fold
+------------------
+ownsem_licm      1.00      19.2±0.10µs       ? ?/sec
+default_licm     1.01      19.4±0.05µs       ? ?/sec
+
+duplicates_by/rfold
+-------------------
+ownsem_licm      1.00      18.6±0.06µs       ? ?/sec
+default_licm     1.05      19.5±0.07µs       ? ?/sec
+
+exactly_one_error/fold
+----------------------
+ownsem_licm      1.00     325.2±0.48ns       ? ?/sec
+default_licm     1.00     325.2±0.51ns       ? ?/sec
+
+filter_map_ok/fold
+------------------
+ownsem_licm      1.00    1036.7±8.95ns       ? ?/sec
+default_licm     1.00    1036.9±5.89ns       ? ?/sec
+
+filter_map_ok/rfold
+-------------------
+ownsem_licm      1.00     936.9±2.75ns       ? ?/sec
+default_licm     1.06     991.9±6.98ns       ? ?/sec
+
+filter_ok/fold
+--------------
+default_licm     1.00     939.2±5.23ns       ? ?/sec
+ownsem_licm      1.13   1057.1±26.07ns       ? ?/sec
+
+filter_ok/rfold
+---------------
+default_licm     1.00    987.4±13.83ns       ? ?/sec
+ownsem_licm      1.00     988.5±9.74ns       ? ?/sec
+
+flatten_ok/fold
+---------------
+default_licm     1.00       2.2±0.00µs       ? ?/sec
+ownsem_licm      1.01       2.3±0.00µs       ? ?/sec
+
+flatten_ok/rfold
+----------------
+default_licm     1.00       2.4±0.00µs       ? ?/sec
+ownsem_licm      1.03       2.4±0.01µs       ? ?/sec
+
+fold1 08 complex iter
+---------------------
+default_licm     1.00     202.5±0.40ns       ? ?/sec
+ownsem_licm      1.00     202.6±0.40ns       ? ?/sec
+
+fold1 08 string format
+----------------------
+ownsem_licm      1.00     166.6±0.33ns       ? ?/sec
+default_licm     1.00     167.1±0.37ns       ? ?/sec
+
+fold1 08 sum
+------------
+default_licm     1.00       4.9±0.01ns       ? ?/sec
+ownsem_licm      1.00       4.9±0.01ns       ? ?/sec
+
+fold1 100 complex iter
+----------------------
+ownsem_licm      1.00    1414.7±6.87ns       ? ?/sec
+default_licm     1.00    1416.9±3.95ns       ? ?/sec
+
+fold1 100 string format
+-----------------------
+default_licm     1.00       4.5±0.03µs       ? ?/sec
+ownsem_licm      1.00       4.5±0.02µs       ? ?/sec
+
+fold1 100 sum
+-------------
+default_licm     1.00      12.9±0.02ns       ? ?/sec
+ownsem_licm      1.00      12.9±0.06ns       ? ?/sec
+
+fold1 10k complex iter
+----------------------
+default_licm     1.00      69.6±0.07µs       ? ?/sec
+ownsem_licm      1.00      69.7±0.29µs       ? ?/sec
+
+fold1 10k string format
+-----------------------
+default_licm     1.00    1291.8±2.30µs       ? ?/sec
+ownsem_licm      1.01    1302.3±5.48µs       ? ?/sec
+
+fold1 10k sum
+-------------
+default_licm     1.00    1148.3±2.63ns       ? ?/sec
+ownsem_licm      1.00    1149.1±7.35ns       ? ?/sec
+
+interleave/fold
+---------------
+ownsem_licm      1.00     971.1±5.28ns       ? ?/sec
+default_licm     1.00     971.1±5.27ns       ? ?/sec
+
+interleave_shortest/fold
+------------------------
+default_licm     1.00     667.5±3.25ns       ? ?/sec
+ownsem_licm      1.00     667.7±2.48ns       ? ?/sec
+
+intersperse/fold
+----------------
+ownsem_licm      1.00     639.5±0.90ns       ? ?/sec
+default_licm     1.00     639.6±1.42ns       ? ?/sec
+
+intersperse_with/fold
+---------------------
+ownsem_licm      1.00     639.6±1.19ns       ? ?/sec
+default_licm     1.00     640.0±1.57ns       ? ?/sec
+
+izip/fold
+---------
+ownsem_licm      1.00     794.1±1.77ns       ? ?/sec
+default_licm     1.00     795.3±3.55ns       ? ?/sec
+
+izip/rfold
+----------
+default_licm     1.00     985.5±1.54ns       ? ?/sec
+ownsem_licm      1.00     985.6±1.68ns       ? ?/sec
+
+kmerge/fold
+-----------
+default_licm     1.00       8.6±0.01µs       ? ?/sec
+ownsem_licm      1.01       8.7±0.02µs       ? ?/sec
+
+kmerge_by/fold
+--------------
+default_licm     1.00      17.8±0.04µs       ? ?/sec
+ownsem_licm      1.02      18.1±0.03µs       ? ?/sec
+
+map_into/fold
+-------------
+ownsem_licm      1.00     445.7±1.96ns       ? ?/sec
+default_licm     1.00     447.4±0.94ns       ? ?/sec
+
+map_into/rfold
+--------------
+ownsem_licm      1.00     446.6±0.77ns       ? ?/sec
+default_licm     1.00     448.1±0.72ns       ? ?/sec
+
+map_ok/fold
+-----------
+default_licm     1.00     947.0±2.42ns       ? ?/sec
+ownsem_licm      1.00     948.5±3.18ns       ? ?/sec
+
+map_ok/rfold
+------------
+ownsem_licm      1.00     941.3±2.15ns       ? ?/sec
+default_licm     1.00     944.4±2.81ns       ? ?/sec
+
+merge/fold
+----------
+ownsem_licm      1.00    1856.0±9.33ns       ? ?/sec
+default_licm     1.00    1861.4±8.17ns       ? ?/sec
+
+merge_by/fold
+-------------
+default_licm     1.00    1425.5±1.71ns       ? ?/sec
+ownsem_licm      1.01    1436.1±8.20ns       ? ?/sec
+
+merge_join_by_bool/fold
+-----------------------
+ownsem_licm      1.00    1648.1±3.22ns       ? ?/sec
+default_licm     1.00    1648.9±1.77ns       ? ?/sec
+
+merge_join_by_ordering/fold
+---------------------------
+default_licm     1.00       8.6±0.03µs       ? ?/sec
+ownsem_licm      1.00       8.6±0.04µs       ? ?/sec
+
+multi_cartesian_product/fold
+----------------------------
+ownsem_licm      1.00     109.8±0.93µs       ? ?/sec
+default_licm     1.00     110.2±0.59µs       ? ?/sec
+
+multipeek/fold
+--------------
+default_licm     1.00     525.6±0.84ns       ? ?/sec
+ownsem_licm      1.06     555.1±0.89ns       ? ?/sec
+
+multizip/fold
+-------------
+ownsem_licm      1.00     969.2±2.33ns       ? ?/sec
+default_licm     1.00     969.6±2.09ns       ? ?/sec
+
+multizip/rfold
+--------------
+default_licm     1.00       4.8±0.01µs       ? ?/sec
+ownsem_licm      1.00       4.8±0.01µs       ? ?/sec
+
+pad_using/fold
+--------------
+ownsem_licm      1.00     751.8±7.01ns       ? ?/sec
+default_licm     1.01     759.2±4.55ns       ? ?/sec
+
+pad_using/rfold
+---------------
+ownsem_licm      1.00     788.0±4.18ns       ? ?/sec
+default_licm     1.00     788.9±1.98ns       ? ?/sec
+
+peek_nth/fold
+-------------
+default_licm     1.00     367.6±0.57ns       ? ?/sec
+ownsem_licm      1.03     380.2±0.84ns       ? ?/sec
+
+permutations1/fold
+------------------
+default_licm     1.00      40.1±0.12µs       ? ?/sec
+ownsem_licm      1.00      40.2±0.12µs       ? ?/sec
+
+permutations2/fold
+------------------
+ownsem_licm      1.00      45.6±0.09µs       ? ?/sec
+default_licm     1.05      47.8±0.05µs       ? ?/sec
+
+permutations3/fold
+------------------
+default_licm     1.00      49.8±0.08µs       ? ?/sec
+ownsem_licm      1.02      50.6±0.07µs       ? ?/sec
+
+permutations4/fold
+------------------
+default_licm     1.00      66.1±0.12µs       ? ?/sec
+ownsem_licm      1.01      67.0±0.11µs       ? ?/sec
+
+positions/fold
+--------------
+ownsem_licm      1.00     653.5±1.52ns       ? ?/sec
+default_licm     1.00     654.1±2.50ns       ? ?/sec
+
+positions/rfold
+---------------
+ownsem_licm      1.00    685.9±12.53ns       ? ?/sec
+default_licm     1.29     886.8±1.06ns       ? ?/sec
+
+powerset 0 fold
+---------------
+ownsem_licm      1.00     228.2±0.91µs       ? ?/sec
+default_licm     1.06     242.6±1.26µs       ? ?/sec
+
+powerset 1 fold
+---------------
+ownsem_licm      1.00     211.7±0.97µs       ? ?/sec
+default_licm     1.08     228.9±0.56µs       ? ?/sec
+
+powerset 12 fold
+----------------
+ownsem_licm      1.00     145.8±1.34µs       ? ?/sec
+default_licm     1.07     155.3±0.25µs       ? ?/sec
+
+powerset 2 fold
+---------------
+ownsem_licm      1.00     178.6±0.92µs       ? ?/sec
+default_licm     1.11     198.1±1.20µs       ? ?/sec
+
+powerset 4 fold
+---------------
+ownsem_licm      1.00     142.0±0.76µs       ? ?/sec
+default_licm     1.13     160.5±0.80µs       ? ?/sec
+
+powerset 8 fold
+---------------
+ownsem_licm      1.00     141.1±0.73µs       ? ?/sec
+default_licm     1.07     151.6±0.42µs       ? ?/sec
+
+powerset/fold
+-------------
+default_licm     1.00      27.7±0.06µs       ? ?/sec
+ownsem_licm      1.02      28.2±0.06µs       ? ?/sec
+
+put_back/fold
+-------------
+default_licm     1.00     309.0±0.75ns       ? ?/sec
+ownsem_licm      1.00     309.3±1.54ns       ? ?/sec
+
+put_back_n/fold
+---------------
+ownsem_licm      1.00     506.0±0.64ns       ? ?/sec
+default_licm     1.03     522.8±1.26ns       ? ?/sec
+
+repeat_n/fold
+-------------
+ownsem_licm      1.00     301.6±0.36ns       ? ?/sec
+default_licm     1.00     301.7±0.46ns       ? ?/sec
+
+repeat_n/rfold
+--------------
+default_licm     1.00     302.5±0.50ns       ? ?/sec
+ownsem_licm      1.00     302.6±0.96ns       ? ?/sec
+
+take_while_inclusive/fold
+-------------------------
+default_licm     1.00     621.1±0.98ns       ? ?/sec
+ownsem_licm      1.00     622.6±5.08ns       ? ?/sec
+
+tuple_buffer/fold
+-----------------
+ownsem_licm      1.00      15.3±0.12ns       ? ?/sec
+default_licm     1.01      15.4±0.07ns       ? ?/sec
+
+tuple_combinations1/fold
+------------------------
+default_licm     1.00     307.2±0.72ns       ? ?/sec
+ownsem_licm      1.00     307.4±0.85ns       ? ?/sec
+
+tuple_combinations2/fold
+------------------------
+ownsem_licm      1.00    1293.8±2.55ns       ? ?/sec
+default_licm     1.01    1302.0±2.29ns       ? ?/sec
+
+tuple_combinations3/fold
+------------------------
+default_licm     1.00      41.9±0.06µs       ? ?/sec
+ownsem_licm      1.00      42.0±0.06µs       ? ?/sec
+
+tuple_combinations4/fold
+------------------------
+default_licm     1.00     844.8±1.26µs       ? ?/sec
+ownsem_licm      1.00     845.6±1.32µs       ? ?/sec
+
+tuple_windows1/fold
+-------------------
+default_licm     1.00     459.7±2.18ns       ? ?/sec
+ownsem_licm      1.00     459.9±1.35ns       ? ?/sec
+
+tuple_windows2/fold
+-------------------
+ownsem_licm      1.00     596.8±1.73ns       ? ?/sec
+default_licm     1.00     597.3±4.74ns       ? ?/sec
+
+tuple_windows3/fold
+-------------------
+default_licm     1.00     886.0±4.70ns       ? ?/sec
+ownsem_licm      1.00     886.7±3.35ns       ? ?/sec
+
+tuple_windows4/fold
+-------------------
+default_licm     1.00    1178.5±5.73ns       ? ?/sec
+ownsem_licm      1.00    1179.1±4.46ns       ? ?/sec
+
+tuples1/fold
+------------
+default_licm     1.00     308.7±2.46ns       ? ?/sec
+ownsem_licm      1.49     459.4±0.66ns       ? ?/sec
+
+tuples2/fold
+------------
+ownsem_licm      1.00     308.3±0.53ns       ? ?/sec
+default_licm     1.02     314.0±3.12ns       ? ?/sec
+
+tuples3/fold
+------------
+ownsem_licm      1.00     428.2±3.04ns       ? ?/sec
+default_licm     1.01     432.6±5.03ns       ? ?/sec
+
+tuples4/fold
+------------
+ownsem_licm      1.00     425.7±1.16ns       ? ?/sec
+default_licm     1.00     426.0±2.41ns       ? ?/sec
+
+unique/fold
+-----------
+default_licm     1.00      19.1±0.02µs       ? ?/sec
+ownsem_licm      1.00      19.2±0.09µs       ? ?/sec
+
+unique/rfold
+------------
+default_licm     1.00      19.1±0.04µs       ? ?/sec
+ownsem_licm      1.00      19.1±0.42µs       ? ?/sec
+
+unique_by/fold
+--------------
+ownsem_licm      1.00      23.7±0.11µs       ? ?/sec
+default_licm     1.02      24.1±0.03µs       ? ?/sec
+
+unique_by/rfold
+---------------
+ownsem_licm      1.00      23.8±0.03µs       ? ?/sec
+default_licm     1.02      24.2±0.08µs       ? ?/sec
+
+update/fold
+-----------
+default_licm     1.00     477.9±0.92ns       ? ?/sec
+ownsem_licm      1.01     481.5±0.95ns       ? ?/sec
+
+update/rfold
+------------
+ownsem_licm      1.00     597.9±1.21ns       ? ?/sec
+default_licm     1.00     598.0±0.80ns       ? ?/sec
+
+while_some/fold
+---------------
+default_licm     1.00      19.3±0.03ns       ? ?/sec
+ownsem_licm      1.02      19.6±0.05ns       ? ?/sec
+
+with_position/fold
+------------------
+ownsem_licm      1.00      16.2±0.03µs       ? ?/sec
+default_licm     1.00      16.2±0.03µs       ? ?/sec
+
+zip_eq/fold
+-----------
+default_licm     1.00    848.2±23.74ns       ? ?/sec
+ownsem_licm      1.01     854.6±6.27ns       ? ?/sec
+
+zip_longest/fold
+----------------
+default_licm     1.00    1300.7±2.38ns       ? ?/sec
+ownsem_licm      1.00    1305.4±4.05ns       ? ?/sec
+
+zip_longest/rfold
+-----------------
+default_licm     1.00     949.2±3.92ns       ? ?/sec
+ownsem_licm      1.00     950.3±4.09ns       ? ?/sec

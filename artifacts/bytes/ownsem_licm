@@ -1,0 +1,85 @@
+
+running 2 tests
+test bytes_mut::tests::test_original_capacity_from_repr ... ignored
+test bytes_mut::tests::test_original_capacity_to_repr ... ignored
+
+test result: ok. 0 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 35 tests
+test get_f32::slice            ... bench:           2.29 ns/iter (+/- 0.02)
+test get_f32::tbuf_1           ... bench:          32.44 ns/iter (+/- 0.46)
+test get_f32::tbuf_1_costly    ... bench:          66.50 ns/iter (+/- 0.53)
+test get_f32::tbuf_2           ... bench:         145.19 ns/iter (+/- 4.59)
+test get_f32::tbuf_2_costly    ... bench:         167.86 ns/iter (+/- 2.39)
+test get_f64::slice            ... bench:           2.29 ns/iter (+/- 0.01)
+test get_f64::tbuf_1           ... bench:          29.88 ns/iter (+/- 0.21)
+test get_f64::tbuf_1_costly    ... bench:          63.90 ns/iter (+/- 0.44)
+test get_f64::tbuf_2           ... bench:         147.15 ns/iter (+/- 4.97)
+test get_f64::tbuf_2_costly    ... bench:         165.16 ns/iter (+/- 3.46)
+test get_u16::slice            ... bench:           2.29 ns/iter (+/- 0.02)
+test get_u16::tbuf_1           ... bench:          34.11 ns/iter (+/- 0.26)
+test get_u16::tbuf_1_costly    ... bench:          66.21 ns/iter (+/- 0.41)
+test get_u16::tbuf_2           ... bench:         159.45 ns/iter (+/- 3.13)
+test get_u16::tbuf_2_costly    ... bench:         171.40 ns/iter (+/- 2.57)
+test get_u32::slice            ... bench:           2.29 ns/iter (+/- 0.02)
+test get_u32::tbuf_1           ... bench:          32.44 ns/iter (+/- 0.20)
+test get_u32::tbuf_1_costly    ... bench:          66.15 ns/iter (+/- 0.30)
+test get_u32::tbuf_2           ... bench:         144.03 ns/iter (+/- 4.69)
+test get_u32::tbuf_2_costly    ... bench:         168.04 ns/iter (+/- 4.04)
+test get_u64::slice            ... bench:           2.29 ns/iter (+/- 0.01)
+test get_u64::tbuf_1           ... bench:          30.40 ns/iter (+/- 0.84)
+test get_u64::tbuf_1_costly    ... bench:          63.92 ns/iter (+/- 0.36)
+test get_u64::tbuf_2           ... bench:         147.30 ns/iter (+/- 2.53)
+test get_u64::tbuf_2_costly    ... bench:         165.07 ns/iter (+/- 0.96)
+test get_u8::slice             ... bench:           2.29 ns/iter (+/- 0.01)
+test get_u8::tbuf_1            ... bench:          28.43 ns/iter (+/- 1.08)
+test get_u8::tbuf_1_costly     ... bench:          49.58 ns/iter (+/- 0.34)
+test get_u8::tbuf_2            ... bench:          33.28 ns/iter (+/- 0.48)
+test get_u8::tbuf_2_costly     ... bench:          47.58 ns/iter (+/- 0.24)
+test get_uint24::slice         ... bench:           2.29 ns/iter (+/- 0.05)
+test get_uint24::tbuf_1        ... bench:          94.90 ns/iter (+/- 1.13)
+test get_uint24::tbuf_1_costly ... bench:          80.69 ns/iter (+/- 0.54)
+test get_uint24::tbuf_2        ... bench:         132.05 ns/iter (+/- 2.82)
+test get_uint24::tbuf_2_costly ... bench:         144.12 ns/iter (+/- 2.14)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 35 measured; 0 filtered out; finished in 12.52s
+
+
+running 10 tests
+test clone_arc_vec        ... bench:      13,501.59 ns/iter (+/- 93.54)
+test clone_shared         ... bench:      26,957.13 ns/iter (+/- 99.22)
+test clone_static         ... bench:      10,536.23 ns/iter (+/- 17.71)
+test deref_shared         ... bench:       1,442.69 ns/iter (+/- 5.81)
+test deref_static         ... bench:         307.89 ns/iter (+/- 0.63)
+test deref_unique         ... bench:         308.04 ns/iter (+/- 1.44)
+test from_long_slice      ... bench:          25.85 ns/iter (+/- 0.18) = 5120 MB/s
+test slice_empty          ... bench:      10,441.76 ns/iter (+/- 54.16)
+test slice_short_from_arc ... bench:      26,189.44 ns/iter (+/- 100.34)
+test split_off_and_drop   ... bench:      83,658.62 ns/iter (+/- 473.09)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 10 measured; 0 filtered out; finished in 14.53s
+
+
+running 18 tests
+test alloc_big                ... bench:          35.27 ns/iter (+/- 0.07)
+test alloc_mid                ... bench:          16.62 ns/iter (+/- 0.13)
+test alloc_small              ... bench:      16,867.43 ns/iter (+/- 271.57)
+test alloc_write_split_to_mid ... bench:          61.51 ns/iter (+/- 1.52)
+test bytes_mut_extend         ... bench:       1,157.63 ns/iter (+/- 7.55) = 110 MB/s
+test clone_frozen             ... bench:      17,610.37 ns/iter (+/- 91.59)
+test deref_shared             ... bench:         588.98 ns/iter (+/- 2.09)
+test deref_two                ... bench:         589.74 ns/iter (+/- 2.97)
+test deref_unique             ... bench:         589.76 ns/iter (+/- 5.32)
+test deref_unique_unroll      ... bench:         589.36 ns/iter (+/- 2.24)
+test drain_write_drain        ... bench:         297.51 ns/iter (+/- 3.12)
+test fmt_write                ... bench:          16.58 ns/iter (+/- 0.05) = 2312 MB/s
+test put_slice_bytes_mut      ... bench:          16.05 ns/iter (+/- 0.07) = 8000 MB/s
+test put_slice_vec            ... bench:           6.56 ns/iter (+/- 0.07) = 21333 MB/s
+test put_slice_vec_extend     ... bench:           6.56 ns/iter (+/- 0.07) = 21333 MB/s
+test put_u8_bytes_mut         ... bench:         776.75 ns/iter (+/- 2.84) = 164 MB/s
+test put_u8_vec               ... bench:         237.36 ns/iter (+/- 1.07) = 540 MB/s
+test put_u8_vec_push          ... bench:          86.33 ns/iter (+/- 2.14) = 1488 MB/s
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 18 measured; 0 filtered out; finished in 30.25s
+

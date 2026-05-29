@@ -1,0 +1,3 @@
+[alias]
+build-with-seaurchin="bench --no-run"
+test-with-seaurchin="test --features arbitrary,rand,serde-serialize,sparse,debug,io,compare,libm,proptest-support,slow-tests,rkyv-safe-deser,rayon"

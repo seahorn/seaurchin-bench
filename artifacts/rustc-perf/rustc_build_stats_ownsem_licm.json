@@ -1,0 +1,83 @@
+{
+  "stats": {
+    "bufreader": {
+      "load_store_promotions": 647,
+      "load_only_promotions": 606,
+      "regalloc_spills": 12439,
+      "loops_vectorized": 75,
+      "slp_vector_instructions": 1222
+    },
+    "compression": {
+      "load_store_promotions": 705,
+      "load_only_promotions": 676,
+      "regalloc_spills": 14839,
+      "loops_vectorized": 186,
+      "slp_vector_instructions": 2079
+    },
+    "css": {
+      "load_store_promotions": 1106,
+      "load_only_promotions": 915,
+      "regalloc_spills": 37565,
+      "loops_vectorized": 122,
+      "slp_vector_instructions": 10481
+    },
+    "fmt": {
+      "load_store_promotions": 37,
+      "load_only_promotions": 36,
+      "regalloc_spills": 363,
+      "loops_vectorized": 1,
+      "slp_vector_instructions": 74
+    },
+    "hashmap": {
+      "load_store_promotions": 618,
+      "load_only_promotions": 573,
+      "regalloc_spills": 12359,
+      "loops_vectorized": 111,
+      "slp_vector_instructions": 1304
+    },
+    "nbody": {
+      "load_store_promotions": 13,
+      "load_only_promotions": 2,
+      "regalloc_spills": 82,
+      "loops_vectorized": 19,
+      "slp_vector_instructions": 76
+    },
+    "nes": {
+      "load_store_promotions": 636,
+      "load_only_promotions": 586,
+      "regalloc_spills": 17287,
+      "loops_vectorized": 112,
+      "slp_vector_instructions": 1517
+    },
+    "parsing": {
+      "load_store_promotions": 27,
+      "load_only_promotions": 14,
+      "regalloc_spills": 255,
+      "loops_vectorized": 2,
+      "slp_vector_instructions": 33
+    },
+    "raytracer": {
+      "load_store_promotions": 686,
+      "load_only_promotions": 610,
+      "regalloc_spills": 11143,
+      "loops_vectorized": 79,
+      "slp_vector_instructions": 1434
+    },
+    "svg": {
+      "load_store_promotions": 736,
+      "load_only_promotions": 679,
+      "regalloc_spills": 13001,
+      "loops_vectorized": 152,
+      "slp_vector_instructions": 10150
+    },
+    "text-search": {
+      "load_store_promotions": 167,
+      "load_only_promotions": 158,
+      "regalloc_spills": 3786,
+      "loops_vectorized": 40,
+      "slp_vector_instructions": 408
+    }
+  },
+  "build_returncode": 0,
+  "collector_returncode": 101
+}

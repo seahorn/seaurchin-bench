@@ -1,0 +1,4 @@
+[alias]
+build-with-seaurchin="bench --no-run"
+# see https://github.com/bitshifter/glam-rs/blob/main/build_and_test_features.sh
+test-with-seaurchin="test --no-default-features --features=std"

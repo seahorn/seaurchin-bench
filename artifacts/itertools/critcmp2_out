@@ -1,0 +1,5 @@
+array_combinations_with_replacement3/fold
+-----------------------------------------
+default_licm          1.00      18.7±0.07µs       ? ?/sec
+no_load_only_licm     1.05      19.8±0.03µs       ? ?/sec
+Welch p-value:     0.000

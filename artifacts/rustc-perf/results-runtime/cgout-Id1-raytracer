@@ -1,0 +1,389 @@
+desc: I1 cache:         32768 B, 64 B, 8-way associative
+desc: D1 cache:         32768 B, 64 B, 8-way associative
+desc: LL cache:         20971520 B, 64 B, 20-way associative
+cmd: /home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/runtime-benchmarks/raytracer/target/release/raytracer-bench profile raytracer
+events: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+fl=./malloc/./malloc/arena.c
+fn=malloc
+162 2 1 1 0 0 0 0 0 0
+fl=./malloc/./malloc/malloc.c
+fn=_int_malloc
+1343 2 1 1 0 0 0 0 0 0
+1362 5 1 1 0 0 0 0 0 0
+2005 3 0 0 1 0 0 0 0 0
+3181 3 0 0 1 0 0 1 0 0
+3183 2 0 0 0 0 0 1 0 0
+3771 9 1 1 0 0 0 6 1 1
+3811 2 1 1 0 0 0 0 0 0
+3838 2 0 0 1 1 1 0 0 0
+3901 2 0 0 0 0 0 0 0 0
+3963 42 4 4 0 0 0 13 1 1
+3964 3 0 0 1 1 1 0 0 0
+3965 3 0 0 0 0 0 1 1 1
+3982 5 0 0 1 0 0 2 0 0
+3983 3 1 1 0 0 0 0 0 0
+3984 3 0 0 2 0 0 0 0 0
+3988 1 0 0 0 0 0 1 0 0
+3993 1 0 0 0 0 0 0 0 0
+3994 31 0 0 10 0 0 0 0 0
+3996 9 0 0 9 0 0 0 0 0
+3997 36 0 0 9 0 0 0 0 0
+3998 9 0 0 0 0 0 0 0 0
+4000 18 1 1 0 0 0 0 0 0
+4001 27 0 0 9 1 1 0 0 0
+4003 9 0 0 9 1 1 0 0 0
+4004 36 0 0 0 0 0 0 0 0
+4006 36 0 0 9 0 0 0 0 0
+4008 18 1 1 9 0 0 0 0 0
+4009 18 0 0 9 0 0 0 0 0
+4011 18 0 0 0 0 0 0 0 0
+4022 36 0 0 0 0 0 0 0 0
+4025 2 0 0 0 0 0 1 0 0
+4053 9 0 0 0 0 0 9 0 0
+4054 9 0 0 0 0 0 9 0 0
+4058 18 0 0 0 0 0 0 0 0
+4061 4 1 1 0 0 0 2 0 0
+4067 3 1 1 2 0 0 1 0 0
+4087 18 1 1 0 0 0 0 0 0
+4089 12 0 0 0 0 0 0 0 0
+4090 24 0 0 0 0 0 0 0 0
+4091 6 0 0 6 1 1 0 0 0
+4095 15 2 2 0 0 0 0 0 0
+4096 12 1 1 0 0 0 0 0 0
+4097 3 0 0 3 1 1 0 0 0
+4100 6 0 0 0 0 0 0 0 0
+4144 9 1 1 0 0 0 3 0 0
+4147 54 1 1 9 1 1 0 0 0
+4149 36 0 0 0 0 0 9 0 0
+4150 9 0 0 0 0 0 9 0 0
+4151 9 0 0 0 0 0 9 0 0
+4156 18 0 0 18 0 0 0 0 0
+4157 18 0 0 0 0 0 0 0 0
+4158 3 0 0 1 0 0 1 0 0
+4166 27 1 1 0 0 0 0 0 0
+4183 2 0 0 0 0 0 0 0 0
+4185 4 1 1 1 0 0 0 0 0
+4188 3 0 0 1 1 1 0 0 0
+4256 2 0 0 1 0 0 0 0 0
+4257 2 0 0 0 0 0 0 0 0
+4258 2 0 0 0 0 0 0 0 0
+4259 2 0 0 1 0 0 0 0 0
+4260 3 0 0 0 0 0 0 0 0
+4265 2 1 1 0 0 0 0 0 0
+4269 3 1 1 0 0 0 0 0 0
+4369 1 1 1 1 0 0 0 0 0
+4370 2 0 0 1 1 1 0 0 0
+4372 2 0 0 1 0 0 0 0 0
+4375 5 1 1 0 0 0 2 0 0
+4392 3 0 0 1 0 0 0 0 0
+4397 2 0 0 0 0 0 0 0 0
+4407 5 1 1 1 0 0 1 0 0
+4408 2 0 0 0 0 0 0 0 0
+4413 9 2 2 7 0 0 0 0 0
+fn=free
+3352 4 1 1 0 0 0 2 0 0
+3356 2 0 0 0 0 0 0 0 0
+3364 2 0 0 2 2 2 0 0 0
+3366 1 0 0 0 0 0 0 0 0
+3368 3 1 1 1 1 0 0 0 0
+3372 3 1 1 1 1 0 0 0 0
+3374 4 0 0 1 1 0 0 0 0
+3376 2 0 0 0 0 0 1 0 0
+3377 2 1 1 0 0 0 1 0 0
+3378 1 0 0 0 0 0 0 0 0
+3381 2 0 0 0 0 0 1 0 0
+3394 1 0 0 0 0 0 1 0 0
+3395 4 0 0 3 0 0 0 0 0
+fn=malloc
+1343 2 1 1 0 0 0 0 0 0
+1362 5 1 1 0 0 0 0 0 0
+3287 6 1 1 0 0 0 3 0 0
+3294 2 0 0 1 1 1 0 0 0
+3304 3 1 1 0 0 0 0 0 0
+3306 4 0 0 2 2 2 0 0 0
+3309 2 0 0 1 1 1 0 0 0
+3319 3 1 1 1 0 0 0 0 0
+3321 4 1 1 0 0 0 1 1 1
+3322 5 0 0 1 0 0 0 0 0
+3347 5 0 0 4 0 0 0 0 0
+fn=malloc_consolidate
+4715 8 1 1 0 0 0 6 1 1
+4730 1 0 0 0 0 0 1 0 0
+4732 2 0 0 0 0 0 1 1 1
+4743 1 1 1 0 0 0 0 0 0
+4745 20 0 0 20 0 0 0 0 0
+4746 20 0 0 0 0 0 0 0 0
+4749 36 1 1 0 0 0 0 0 0
+4753 54 0 0 18 15 15 0 0 0
+4754 72 0 0 0 0 0 0 0 0
+4759 90 1 1 18 3 3 0 0 0
+4762 36 0 0 0 0 0 0 0 0
+4763 18 0 0 0 0 0 0 0 0
+4764 54 0 0 18 2 2 0 0 0
+4766 36 0 0 0 0 0 0 0 0
+4767 4 0 0 4 0 0 0 0 0
+4768 4 0 0 0 0 0 0 0 0
+4769 4 0 0 0 0 0 0 0 0
+4770 16 0 0 4 0 0 0 0 0
+4772 40 0 0 16 0 0 20 0 0
+4775 36 1 1 18 1 1 0 0 0
+4778 36 1 1 18 8 8 0 0 0
+4779 10 1 1 0 0 0 0 0 0
+4780 70 0 0 20 0 0 30 0 0
+4782 16 0 0 0 0 0 8 0 0
+4784 18 0 0 18 0 0 0 0 0
+4785 36 0 0 0 0 0 18 0 0
+4786 36 0 0 18 0 0 18 0 0
+4788 36 0 0 0 0 0 0 0 0
+4789 6 0 0 0 0 0 3 0 0
+4793 54 0 0 0 0 0 18 0 0
+4795 18 0 0 0 0 0 18 0 0
+4796 28 0 0 0 0 0 18 0 0
+4805 51 0 0 0 0 0 0 0 0
+4808 30 0 0 10 0 0 0 0 0
+4809 8 0 0 7 0 0 0 0 0
+fn=munmap_chunk
+3044 1 1 1 0 0 0 0 0 0
+3045 2 0 0 2 2 0 0 0 0
+3046 3 0 0 1 0 0 0 0 0
+3048 2 0 0 0 0 0 0 0 0
+3050 1 0 0 0 0 0 0 0 0
+3051 2 0 0 1 0 0 0 0 0
+3052 2 1 1 1 0 0 0 0 0
+3058 4 0 0 0 0 0 0 0 0
+3059 5 0 0 0 0 0 0 0 0
+3062 1 0 0 2 0 0 0 0 0
+3063 3 0 0 2 0 0 0 0 0
+3068 2 1 1 0 0 0 0 0 0
+3069 1 0 0 0 0 0 0 0 0
+fn=sysmalloc
+2548 9 1 1 0 0 0 6 0 0
+2568 4 0 0 3 2 2 1 0 0
+2579 2 1 1 0 0 0 0 0 0
+2580 2 0 0 1 1 1 0 0 0
+2581 3 1 1 2 1 1 0 0 0
+2585 5 0 0 1 0 0 0 0 0
+2594 4 1 1 0 0 0 1 0 0
+2595 2 0 0 0 0 0 0 0 0
+2964 11 0 0 9 0 0 0 0 0
+fn=sysmalloc_mmap.constprop.0
+2028 4 0 0 1 0 0 0 0 0
+2420 3 1 1 0 0 0 3 0 0
+2433 3 0 0 0 0 0 0 0 0
+2438 2 1 1 0 0 0 0 0 0
+2441 10 0 0 0 0 0 1 0 0
+2444 2 1 1 0 0 0 0 0 0
+2448 2 0 0 0 0 0 0 0 0
+2466 3 0 0 0 0 0 0 0 0
+2484 1 0 0 0 0 0 1 1 1
+2485 3 0 0 0 0 0 1 0 0
+2489 3 1 1 2 0 0 0 0 0
+2490 5 0 0 2 0 0 0 0 0
+2493 3 0 0 2 0 0 0 0 0
+2494 5 1 1 2 0 0 0 0 0
+2499 5 0 0 4 0 0 0 0 0
+fn=unlink_chunk.constprop.0
+1626 14 1 1 0 0 0 0 0 0
+1628 70 0 0 28 0 0 0 0 0
+1631 70 1 1 28 1 1 0 0 0
+1632 14 0 0 14 0 0 0 0 0
+1634 56 0 0 28 5 5 0 0 0
+1637 14 0 0 0 0 0 14 0 0
+1638 14 0 0 0 0 0 14 0 0
+1639 34 0 0 2 0 0 0 0 0
+1641 2 0 0 1 0 0 0 0 0
+1642 6 0 0 2 0 0 0 0 0
+1645 2 0 0 1 0 0 0 0 0
+1659 1 0 0 0 0 0 1 0 0
+1660 2 0 0 1 0 0 1 0 0
+1663 28 1 1 14 0 0 0 0 0
+fl=./misc/../sysdeps/unix/syscall-template.S
+fn=munmap
+117 5 2 2 0 0 0 0 0 0
+122 1 0 0 1 0 0 0 0 0
+fl=./misc/../sysdeps/unix/sysv/linux/mmap64.c
+fn=mmap
+47 2 1 1 0 0 0 0 0 0
+50 2 0 0 0 0 0 0 0 0
+58 4 0 0 0 0 0 0 0 0
+60 1 0 0 1 0 0 0 0 0
+fl=/home/siddharth/.cargo/registry/src/index.crates.io-6f17d22bba15001f/crabgrind-0.1.12/export.c
+fn=cg_start_instrumentation
+125 7 1 1 4 3 3 1 1 1
+fn=cg_stop_instrumentation
+127 16 2 2 1 1 0 8 0 0
+fl=/home/siddharth/.cargo/registry/src/index.crates.io-6f17d22bba15001f/crabgrind-0.1.12/lib.rs
+fn=benchlib::benchmark::BenchmarkGroup::register_benchmark::{{closure}}
+173 4 0 0 3 2 2 0 0 0
+fl=/home/siddharth/rust/library/alloc/src/alloc.rs
+fn=benchlib::benchmark::BenchmarkGroup::register_benchmark::{{closure}}
+119 2 0 0 1 1 1 1 0 0
+fn=raytracer_bench::render::render
+100 3 0 0 1 1 1 1 1 1
+fl=/home/siddharth/rust/library/alloc/src/raw_vec.rs
+fn=benchlib::benchmark::BenchmarkGroup::register_benchmark::{{closure}}
+300 2 0 0 0 0 0 0 0 0
+599 2 0 0 2 0 0 0 0 0
+fn=raytracer_bench::render::render
+0 3 2 2 1 0 0 0 0 0
+215 3 0 0 0 0 0 1 0 0
+220 1 0 0 0 0 0 0 0 0
+234 2 0 0 0 0 0 0 0 0
+278 80000 0 0 80000 0 0 0 0 0
+fl=/home/siddharth/rust/library/alloc/src/vec/mod.rs
+fn=<alloc::vec::Vec<alloc::boxed::Box<dyn raytracer_bench::model::Model>> as raytracer_bench::model::Model>::hit
+2816 16091200 0 0 16091200 1 1 0 0 0
+fn=raytracer_bench::render::render
+0 9440000 3 3 8800000 0 0 160000 0 0
+699 4 0 0 1 0 0 3 0 0
+1996 80000 1 1 80000 0 0 0 0 0
+1999 160000 0 0 80000 0 0 0 0 0
+2005 160000 0 0 0 0 0 80000 0 0
+fl=/home/siddharth/rust/library/core/src/alloc/layout.rs
+fn=raytracer_bench::render::render
+451 2 0 0 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/core/src/cmp.rs
+fn=raytracer_bench::render::render
+1563 16240201 0 0 16240000 0 0 0 0 0
+fl=/home/siddharth/rust/library/core/src/iter/range.rs
+fn=raytracer_bench::render::render
+0 24640259 9 9 8080218 4 4 16080011 2 2
+753 8160202 0 0 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/core/src/num/uint_macros.rs
+fn=benchlib::benchmark::BenchmarkGroup::register_benchmark::{{closure}}
+831 1 1 1 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/core/src/ptr/mod.rs
+fn=raytracer_bench::render::render
+1534 240000 0 0 0 0 0 160000 3750 3750
+1706 3 0 0 1 1 1 0 0 0
+fl=/home/siddharth/rust/library/core/src/ptr/mut_ptr.rs
+fn=raytracer_bench::render::render
+1044 160000 0 0 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/core/src/ptr/non_null.rs
+fn=<alloc::vec::Vec<alloc::boxed::Box<dyn raytracer_bench::model::Model>> as raytracer_bench::model::Model>::hit
+1749 177003200 0 0 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/core/src/slice/iter/macros.rs
+fn=<alloc::vec::Vec<alloc::boxed::Box<dyn raytracer_bench::model::Model>> as raytracer_bench::model::Model>::hit
+0 173486200 1 1 16091200 0 0 40565200 0 0
+25 96547200 0 0 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/std/src/alloc.rs
+fn=__rdl_alloc
+397 1 1 1 0 0 0 0 0 0
+fn=__rdl_dealloc
+407 2 1 1 0 0 0 1 0 0
+fl=/home/siddharth/rust/library/std/src/f32.rs
+fn=<raytracer_bench::model::Sphere as raytracer_bench::model::Model>::hit
+444 40137800 0 0 0 0 0 0 0 0
+fn=raytracer_bench::render::render
+444 16160000 0 0 0 0 0 0 0 0
+fl=/home/siddharth/rust/library/std/src/sys/pal/unix/alloc.rs
+fn=__rdl_alloc
+13 4 0 0 0 0 0 0 0 0
+14 2 0 0 1 1 1 0 0 0
+fn=__rdl_dealloc
+48 2 0 0 2 1 1 0 0 0
+fl=/home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/benchlib/src/profile.rs
+fn=benchlib::benchmark::BenchmarkGroup::register_benchmark::{{closure}}
+11 2 1 1 2 1 1 0 0 0
+fl=/home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/runtime-benchmarks/raytracer/src/main.rs
+fn=benchlib::benchmark::BenchmarkGroup::register_benchmark::{{closure}}
+100 6 0 0 0 0 0 2 0 0
+fl=/home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/runtime-benchmarks/raytracer/src/materials.rs
+fn=<raytracer_bench::materials::Dielectric as raytracer_bench::materials::Material>::scatter
+29 705300 0 0 0 0 0 0 0 0
+76 705300 1 1 0 0 0 0 0 0
+80 1410600 0 0 1410600 0 0 0 0 0
+90 3526500 0 0 0 0 0 3526500 0 0
+92 3526500 1 1 1410600 0 0 1410600 0 0
+94 705300 0 0 705300 0 0 0 0 0
+fn=<raytracer_bench::materials::Lambertian as raytracer_bench::materials::Material>::scatter
+20 21956400 1 1 21956400 0 0 0 0 0
+21 38423700 0 0 10978200 1 1 27445500 0 0
+23 21956400 0 0 10978200 0 0 10978200 0 0
+25 5489100 0 0 5489100 0 0 0 0 0
+fn=<raytracer_bench::materials::Metal as raytracer_bench::materials::Material>::scatter
+29 1896800 0 0 0 0 0 0 0 0
+38 1896800 1 1 0 0 0 0 0 0
+39 7587200 0 0 7587200 0 0 0 0 0
+40 1896800 0 0 1896800 1 1 0 0 0
+42 20864800 1 1 7587200 0 0 13277600 0 0
+44 3793600 0 0 0 0 0 0 0 0
+47 9484000 0 0 3793600 0 0 3793600 0 0
+50 1896800 0 0 1896800 0 0 0 0 0
+fl=/home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/runtime-benchmarks/raytracer/src/model.rs
+fn=<alloc::vec::Vec<alloc::boxed::Box<dyn raytracer_bench::model::Model>> as raytracer_bench::model::Model>::hit
+0 18141600 0 0 18141600 0 0 0 0 0
+64 128729600 1 1 0 0 0 112638400 0 0
+67 694356000 1 1 372532000 3 3 80456000 0 0
+68 20283200 0 0 0 0 0 0 0 0
+71 4101100 0 0 0 0 0 0 0 0
+78 160912000 1 1 64364800 0 0 96547200 1 1
+79 128729600 0 0 112638400 0 0 0 0 0
+fn=<raytracer_bench::model::Sphere as raytracer_bench::model::Model>::hit
+0 60635300 0 0 20068900 1 1 40566400 0 0
+31 80456000 1 1 0 0 0 0 0 0
+32 321824000 0 0 321824000 4 4 0 0 0
+33 160912000 1 1 160912000 0 0 0 0 0
+35 321824000 0 0 80456000 0 0 0 0 0
+36 563192000 0 0 0 0 0 0 0 0
+37 160912000 0 0 0 0 0 0 0 0
+38 100344500 0 0 0 0 0 0 0 0
+39 40137800 0 0 20068900 0 0 0 0 0
+41 20283200 0 0 0 0 0 20283200 0 0
+45 10141600 0 0 10141600 0 0 0 0 0
+48 19854600 0 0 0 0 0 0 0 0
+49 19854600 0 0 9927300 0 0 0 0 0
+59 70314400 1 1 0 0 0 70314400 0 0
+60 80456000 0 0 80456000 0 0 0 0 0
+fl=/home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/runtime-benchmarks/raytracer/src/render.rs
+fn=raytracer_bench::render::render
+0 62117400 4 4 28749200 0 0 12363600 0 0
+14 177094400 2 2 56364800 1 1 56364800 0 0
+15 48547200 0 0 24273600 1 1 8091200 0 0
+17 16182400 0 0 8091200 0 0 0 0 0
+18 32364800 0 0 16182400 0 0 16182400 0 0
+24 16182400 0 0 0 0 0 0 0 0
+30 32000000 0 0 24000000 0 0 0 0 0
+33 15948400 1 1 7974200 0 0 0 0 0
+34 7974200 0 0 0 0 0 0 0 0
+39 12 1 1 0 0 0 8 2 2
+46 2 0 0 0 0 0 0 0 0
+48 800 0 0 0 0 0 0 0 0
+68 7 1 1 4 0 0 3 0 0
+69 8 0 0 7 0 0 0 0 0
+fl=/home/siddharth/seaurchin-bench/artifacts/rustc-perf/collector/runtime-benchmarks/raytracer/src/vec.rs
+fn=<raytracer_bench::materials::Dielectric as raytracer_bench::materials::Material>::scatter
+18 7053000 0 0 1410600 0 0 0 0 0
+71 1410600 0 0 0 0 0 0 0 0
+78 2115900 0 0 0 0 0 0 0 0
+fn=<raytracer_bench::materials::Lambertian as raytracer_bench::materials::Material>::scatter
+64 27445500 1 1 10978200 1 1 0 0 0
+71 10978200 0 0 0 0 0 0 0 0
+fn=<raytracer_bench::materials::Metal as raytracer_bench::materials::Material>::scatter
+18 30348800 2 2 0 0 0 0 0 0
+64 7587200 0 0 0 0 0 0 0 0
+71 3793600 0 0 0 0 0 0 0 0
+78 9484000 0 0 1896800 0 0 0 0 0
+fn=<raytracer_bench::model::Sphere as raytracer_bench::model::Model>::hit
+18 1850488000 2 2 0 0 0 0 0 0
+64 20283200 1 1 0 0 0 0 0 0
+71 362390400 1 1 10141600 0 0 0 0 0
+78 70991200 0 0 0 0 0 0 0 0
+93 10141600 0 0 0 0 0 0 0 0
+fn=raytracer_bench::render::render
+0 560000 0 0 80000 0 0 160000 0 0
+18 104000000 0 0 16000000 1 1 0 0 0
+40 560000 0 0 240000 0 0 0 0 0
+43 1746080 2 2 436520 0 0 0 0 0
+50 16000000 1 1 16000000 0 0 0 0 0
+64 71845200 0 0 8000000 0 0 0 0 0
+78 72002600 2 2 15948400 0 0 0 0 0
+86 96729600 1 1 48364800 0 0 16182400 0 0
+93 16000000 0 0 8000000 0 0 0 0 0
+113 48000000 0 0 16000000 0 0 32000000 0 0
+fl=???
+fn=__rust_alloc
+0 1 1 1 0 0 0 0 0 0
+fn=__rust_dealloc
+0 1 1 1 0 0 0 0 0 0
+summary: 7163272365 122 122 1731896988 90 84 679627534 3764 3764

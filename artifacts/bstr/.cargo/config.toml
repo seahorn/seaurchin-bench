@@ -1,0 +1,3 @@
+[alias]
+build-with-seaurchin="bench --manifest-path=bench/Cargo.toml --bench bstr --no-run"
+test-with-seaurchin="run -p ci -- test"
