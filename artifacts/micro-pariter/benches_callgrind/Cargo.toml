@@ -1,0 +1,16 @@
+[package]
+name = "benches-callgrind"
+edition = "2021"
+description = "Benchmarks that test micro-pariter's performance"
+publish = false
+license = "MIT OR Apache-2.0"
+
+[[bench]]
+name = "benches_callgrind"
+path = "bench_pariter.rs"
+harness = false
+
+[dependencies]
+micro-pariter = { path = "../" }
+criterion = "0.6"
+iai-callgrind = "0.15.2"

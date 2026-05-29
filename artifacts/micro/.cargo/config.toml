@@ -1,0 +1,6 @@
+[alias]
+build-with-seaurchin ="bench --manifest-path=benches_walltime/Cargo.toml --no-run"
+
+
+test-with-seaurchin = "bench --manifest-path=benches_walltime/Cargo.toml"
+
